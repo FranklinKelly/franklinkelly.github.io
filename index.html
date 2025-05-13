@@ -11,7 +11,6 @@
       font-family: 'Noto Serif', serif;
       letter-spacing: 0.1rem;
       line-height: 1.75rem;
-      max-width: 900px;
       justify-content: center;
       margin: 0 auto;
     }
@@ -20,41 +19,45 @@
       font-family: "Goudy Bookletter 1911", serif;
       font-weight: 400;
       font-style: normal;
+      width: 300px;
+      margin: 0 auto 50px auto;
       letter-spacing: 0.5rem;
       padding-top: 50px;
-      padding-bottom: 75px;
-      padding-left: 0;
-      padding-right: 0;
-    }
+      padding-bottom: 50px;
+      text-wrap-mode:nowrap;
+      border-bottom: 2px solid #D1D1D1;
+    }  
     header h1 {
       position: relative;
-      right: 6.5rem;
-      text-wrap-mode: nowrap;
-    }
-    .profile-pic {
-      width: 100vh;
-      height: 100vh;
-      border-radius: 50%;
     }
     .courier-strong {
       font-family: 'Courier New';
       font-size: large;
       letter-spacing: 0.2rem;
     }
-    .black-highlight::before {
+    .black-highlight {
       background-color: black;
-      content: '';
-      position:relative;
-      padding: 1rem 6.5rem;
-      left: 12rem;
+      position:absolute;
+      width: 13rem;
+      height: 5rem;
+      bottom: -0.4rem;
+      left: -2rem;
       z-index: -1;
     }
-    .black-highlight {
+    .black-highlight-text {
       font-family: 'Noto Serif';
       font-weight: 100;
       color: white;
       position: relative;
-      bottom: 1.2rem;
+      bottom: 1rem;
+      right: 1rem;
+    }
+    .about-me {
+      margin: 0 auto;
+      padding: 50px 2rem;
+      max-width: 900px;
+      border-bottom: 2px solid #D1D1D1;
+      margin-bottom: 50px;
     }
     .about-me > .about-title {
       position: relative;
@@ -72,14 +75,79 @@
       letter-spacing: 0rem;
       color: #E97132;
     }
+    .research {
+      background-image: url('./assets/vertical_text.png');
+      background-repeat: no-repeat;
+      background-size: 1100px 300px;
+      background-position: center;
+      min-width: 300px;
+      max-height: 500px;
+      padding: 100px 2rem;
+      margin-bottom: 100px;
+    }
+    .research > div {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .gold-link {
+      position: relative;
+      font-weight: 600;
+    }
+    .gold-link > a {
+      color: #E97132;
+      text-decoration: underline;
+      font-family: 'Courier New';
+      position: relative;
+      z-index: 2;
+      text-wrap: nowrap;;
+    }
+    .green-back {
+      background-color: #C2F1C8;
+      position: absolute;
+      top: 0.8rem;
+      right: 1.25rem;
+      width: 6.5rem;
+      height: 1rem;
+      z-index: 1;
+    }
+    .green-highlight {
+      background-color: #C2F1C8;
+      font-weight: 600;
+      padding: 0 0.2rem;
+    }
+    .jupyter {
+      margin-top: 50px;
+    }
+    .jupyter > div {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-gap: 2rem;
+    }
+    .jupyter-title {
+      font-family: 'Goudy Bookletter 1911', serif;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.5rem;
+      grid-area: 1 / 1 / span 1 / span 2;
+      text-align: center;
+    }
+    .jupyter-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+    .small-logo {
+      width: 50px;
+      margin: 20px;
+      padding: 0;
+    }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1><strong class="black-highlight">Franklin </strong> Kelly</h1>
+    <h1><span class="black-highlight"></span><strong class="black-highlight-text">Franklin </strong> Kelly</h1>
     <span >...</span><br/>
-    <img src="./assets/profile2.png" class="profile-pic" alt="Picture of Franklin"/>
   </header>
 
   <!-- About Section -->
@@ -93,21 +161,29 @@
 
   <!-- Projects Section -->
   <section class="research">
-    <h2>Research Projects</h2>
-      <ul class="list-group">
-        <li class="list-group-item"><a href="./assets/2025_SNIPE_Hunt_Poster.pdf">SNIPE Hunt</a> - Search for Non-Interacting Particles Experiment. In this project we search for a dark matter candidate, ultralight bosonic dark matter, using ultra-sensitive magnetometers. My work is calibrating these sensors to return relatively flat frequency responses.</li>
-      </ul>
-  </section>
+    <div>
+      <span class="gold-link"><span class="green-back"></span><a href="./assets/2025_SNIPE_Hunt_Poster.pdf" >SNIPE Hunt</a></span> 
+      <p class="research-text">
+        <strong class="courier-strong">Search for Non-Interacting Particles Experiment Hunt.</strong> 
+        In this project we search for a <span class="green-highlight">dark matter</span> candidate, called ultralight bosonic dark matter, using ultra-sensitive magnetometers. My work is calibrating these sensors to return relatively flat frequency responses.
+        </p>
+    </div>
+    </section>
   <section class="jupyter">
-    <h2>Jupyter Notebooks</h2>
-    <p>These notebooks demonstrate my skills in coding, physics, and problem solving. Take a look through a few!</p>
-      <ul class="list-group">
-        <li class="list-group-item"><a href="./JupyterNotebooks/Chapter 1 Extra Credit.html" target="_blank">Differential Equations</a> - Comparing the numerical solution to an analytical approximation for the motion of an object in a simple energy well.</li>
-        <li class="list-group-item"><a href="./JupyterNotebooks/Chapter 2 Extra Credit.html" target="_blank">Projectile Motion</a> - Calculating the path of a projectile using differential equation methods.</li>
-        <li class="list-group-item"><a href="./JupyterNotebooks/Chapter 3 Extra Credit.html" target="_blank">Momentum Conservation</a> - Simulating if the center of mass for conserved momentum system act like a regular projectile.</li>
-        <li class="list-group-item"><a href="./JupyterNotebooks/Chapter 4 Extra Credit.html" target="_blank">Energy Equilibria</a> - Finding stable equilibria of a stacked cube and cylinder.</li>
-        <li class="list-group-item"><a href="./JupyterNotebooks/Chapter 5 Extra Credit.html" target="_blank">Damped Harmonic Motion</a> - Comparing motion of a spring under different damping constants.</li>
-      </ul>
+    <div>
+      <h2 class="jupyter-title">Jupyter Notebooks</h2>
+      <span class="jupyter-logos"><img class="small-logo" src="./assets/jupyterlogo.svg" /><img class='small-logo' src="./assets/pythonlogo.svg" /></span>
+      <span class="jupyter-text">
+        <p>These notebooks demonstrate my skills in coding, physics, and problem solving. Take a look through a few!</p>
+        <ul class="list-group">
+          <li ><span class="gold-link"><a href="./JupyterNotebooks/Chapter 1 Extra Credit.html" target="_blank">Differential Equations</a></span> - Comparing the numerical solution to an analytical approximation for the motion of an object in a simple energy well.</li>
+          <li ><span class="gold-link"><a href="./JupyterNotebooks/Chapter 2 Extra Credit.html" target="_blank">Projectile Motion</a></span> - Calculating the path of a projectile using differential equation methods.</li>
+          <li ><span class="gold-link"><a href="./JupyterNotebooks/Chapter 3 Extra Credit.html" target="_blank">Momentum Conservation</a></span> - Simulating if the center of mass for conserved momentum system act like a regular projectile.</li>
+          <li ><span class="gold-link"><a href="./JupyterNotebooks/Chapter 4 Extra Credit.html" target="_blank">Energy Equilibria</a></span> - Finding stable equilibria of a stacked cube and cylinder.</li>
+          <li ><span class="gold-link"><a href="./JupyterNotebooks/Chapter 5 Extra Credit.html" target="_blank">Damped HarmonicMotion</a></span> - Comparing motion of a spring under different damping constants.</li>
+        </ul>
+      </span>
+    </div>
   </section>
 
   <section class="games">
