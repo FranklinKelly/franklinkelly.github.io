@@ -29,12 +29,18 @@
       width: 100%;
     }
     section {
+      scale: 0.95; opacity: 0.5;
       padding: 40px 60px;
       line-height: 1.8;
       margin: 0;
       background-color: white;
+      animation: fadeIn linear forwards;
+      animation-timeline: view();
+      animation-range: entry 100px;
     }
-
+    @keyframes fadeIn {
+      to { scale: 1; opacity: 1; }
+    }
     a {
       color:  #F26419;
 
