@@ -5,65 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Franklin Kelly - Portfolio</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap');
     body {
-      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
+      background-color: #E8E8E8;
+      font-family: 'Noto Serif', serif;
+      letter-spacing: 0.1rem;
+      line-height: 1.75rem;
+      max-width: 900px;
+      justify-content: center;
+      margin: 0 auto;
     }
     header {
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      color: black;
-      padding: 20px 0;
-      background-color: white;
       text-align: center;
+      font-family: "Goudy Bookletter 1911", serif;
+      font-weight: 400;
+      font-style: normal;
+      letter-spacing: 0.5rem;
+      padding-top: 50px;
+      padding-bottom: 75px;
+      padding-left: 0;
+      padding-right: 0;
     }
-    h1 {
-      margin: 0;
-    }
-    footer {
-      color: black;
-      text-align: center;
-      padding: 10px 0;
+    header h1 {
       position: relative;
-      bottom: 0;
-      width: 100%;
+      right: 6.5rem;
+      text-wrap-mode: nowrap;
     }
-    section {
-      scale: 0.95; opacity: 0.5;
-      padding: 40px 60px;
-      line-height: 1.8;
-      margin: 0;
-      background-color: white;
-      animation: fadeIn linear forwards;
-      animation-timeline: view();
-      animation-range: entry 100px;
+    .profile-pic {
+      width: 100vh;
+      height: 100vh;
+      border-radius: 50%;
     }
-    @keyframes fadeIn {
-      to { scale: 1; opacity: 1; }
+    .courier-strong {
+      font-family: 'Courier New';
+      font-size: large;
+      letter-spacing: 0.2rem;
     }
-    a {
-      color:  #F26419;
-
+    .black-highlight::before {
+      background-color: black;
+      content: '';
+      position:relative;
+      padding: 1rem 6.5rem;
+      left: 12rem;
+      z-index: -1;
     }
-
-    a:hover{
-      color: #F6AE2D;
+    .black-highlight {
+      font-family: 'Noto Serif';
+      font-weight: 100;
+      color: white;
+      position: relative;
+      bottom: 1.2rem;
+    }
+    .about-me > .about-title {
+      position: relative;
+    }
+    .gold-highlight {
+      background-color: #E97132;
+      color: black;
+      letter-spacing: 0.5rem;
+      position: relative;
+      bottom: 1rem;
+      padding: 1rem;
+    }
+    .gold-text {
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      letter-spacing: 0rem;
+      color: #E97132;
     }
   </style>
 </head>
 <body>
   <!-- Header -->
   <header>
-    <h1>Franklin Kelly</h1>
-    <p>Physicist | Creative | Problem Solver</p>
+    <h1><strong class="black-highlight">Franklin </strong> Kelly</h1>
+    <span >...</span><br/>
+    <img src="./assets/profile2.png" class="profile-pic" alt="Picture of Franklin"/>
   </header>
 
   <!-- About Section -->
   <section class="about-me">
-    <h2>About Me</h2>
-    <p>
-      A physics student with a passion for creative problem solving and a strong foundation in computation. I have interests in technical research, writing, and simulation. I am currently pursuing an undergraduate degree in Physics at Messiah University. This site is a collection of some of my projects that I believe demonstrate my passion, curiosity, and creativity. 
-    </p>
+    <span class="about-title gold-highlight">ABOUT</span>
+    <span class="about-text">
+      <strong class="courier-strong">A PHYSICS STUDENT</strong> with a passion for creative problem solving and a strong foundation in computation. I have interests in technical research, writing, and simulation. I am currently pursuing an undergraduate degree in Physics at Messiah University. This site is a collection of some of my projects that I believe demonstrate my <strong class="gold-text">passion</strong>, <strong class="gold-text">curiosity</strong>, and <strong class="gold-text">creativity.</strong> 
+    </span>
     
   </section>
 
